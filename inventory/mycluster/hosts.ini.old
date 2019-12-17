@@ -1,0 +1,30 @@
+[all]
+k8s-master01 	 ansible_host=172.16.70.160 ip=172.16.70.160
+k8s-master02 	 ansible_host=172.16.70.161 ip=172.16.70.161
+k8s-node01 	 ansible_host=172.16.70.162 ip=172.16.70.162
+k8s-node02 	 ansible_host=172.16.70.163 ip=172.16.70.163
+k8s-node03 	 ansible_host=172.16.70.164 ip=172.16.70.164
+
+[kube-master]
+k8s-master01 	 
+k8s-master02 	 
+
+[kube-node]
+k8s-node01 	 
+k8s-node02 	 
+k8s-node03 	 
+
+[etcd]
+k8s-master01 	 
+k8s-master02 	 
+
+[k8s-cluster:children]
+kube-node 	 
+kube-master 	 
+
+[calico-rr]
+
+[vault]
+k8s-master01
+k8s-master02
+
